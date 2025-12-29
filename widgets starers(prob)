@@ -1,0 +1,44 @@
+from tkinter import *
+from datetime import date 
+#create window
+window = Tk()
+
+#set wondow title and geomentry
+window.title('INTRODUCTION')
+
+window.geometry('800x1000')
+
+#add widhets,label
+
+lbl = Label(text = "WELCOME TO THE INTERFACE!! ", fg = "white", bg="#FFB6C1", height = 1, width=800)
+
+name_lbl = Label(text = "FULL NAME:", fg="white", bg="#E1AD9D")
+name_entry = Entry()
+
+def display():
+    name = name_entry.get()
+
+    #gobal veriable
+
+    global message
+    message = "hope you are having a very nice day! \n Today's date is : "
+    greet = "Hello "+ name+ "\n"
+
+    text_box.insert(END,greet)
+    text_box.insert(END,message)
+    text_box.insert(END,date.today())
+
+text_box = Text(height = 3, width= 800)
+
+#button
+
+btn = Button(text="begin", command = display, height = 1, width= 7, bg="pink")
+
+lbl.pack()
+name_lbl.pack()
+name_entry.pack()
+btn.pack()
+text_box.pack()
+    
+#start gui 
+window.mainloop()
